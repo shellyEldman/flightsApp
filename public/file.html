@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Flights Scanner</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+
+<body>
+    <section>
+        <h1>Flights Scanner</h1>
+        <button class="load">check for available flights</button>
+    </section>
+
+
+    <section class="table">
+        <h2>Flights List</h2>
+        <div>
+            <span id="sortSpan">SORT:</span>
+            <button class="sort-dep">Sort By Departure</button>
+            <button class="sort-ar">Sort By Arrival</button>
+        </div>
+        <table id="flight-table">
+            <thead>
+                <tr>
+                    <th>No.</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>By</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+body {
+    font-family: 'Raleway', sans-serif;
+    background-image: url('https://images.unsplash.com/photo-1530789253388-582c481c54b0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80');
+    background-size: cover;
+    background-repeat: no-repeat;
+    letter-spacing: 1px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 7px;
+    font-size: 45px;
+    margin-bottom: 30px;
+}
+
+#sortSpan {
+    color: white;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 15px;
+    letter-spacing: 7px;
+}
+
+button {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 7px 17px;
+    outline: none;
+    cursor: pointer;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+button.hide {
+    display: none;
+}
+
+section.table {
+    display: none;
+}
+
+section.show {
+    display: flex;
+}
+
+table {
+    border: 3px white solid;
+    background-color: rgba(255, 255, 255, 0.6);
+    margin: 20px;
+    padding: 5px;
+    color: #282828;
+}
+
+th {
+    padding: 5px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    font-size: 18px;
+}
+
+td {
+    padding: 5px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+h2 {
+    color: #282828;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+}
+
