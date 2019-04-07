@@ -21,6 +21,25 @@ h1 {
     margin-bottom: 30px;
 }
 
+label {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+input {
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: none;
+    padding: 7px;
+    margin-right: 10px;
+    color: #282828;
+    font-size: 17px;
+    font-weight: 600;
+}
+
 #sortSpan {
     color: white;
     font-size: 20px;

@@ -8,7 +8,6 @@ contentTypes.set('js', 'text/javascript');
 contentTypes.set('css', 'text/css');
 contentTypes.set('json', 'application/json');
 
-
 http.createServer(function (req, res) {
     const reqUrl = url.parse(req.url);
     let ext = reqUrl.pathname.split('.')[1];
