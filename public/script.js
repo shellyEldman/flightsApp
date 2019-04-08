@@ -4,12 +4,21 @@ const outputTable = document.querySelector('#flight-table tbody');
 const sectionTable = document.querySelector('section.table');
 const btnLoad = document.querySelector('button.load');
 
+document.querySelector('#destination').addEventListener('keyup', (e) => {
+    const filteredFlights = flightsData.filter((flight) => {
+        const regex = new RegExp("^" + e.target.value, 'i');
+        return flight.to.match(regex);
+    });
+    outputTable.innerHTML = '';
+    renderTable(filteredFlights);
+});
+
 btnLoad.addEventListener('click', () => {
     fetch('flights.json')
         .then(res => res.json())
         .then(data => {
             flightsData = data;
-            renderTable(flightsData, outputTable);
+            renderTable(flightsData);
         });
     sectionTable.classList.add('show');
     btnLoad.classList.add('hide');
@@ -22,7 +31,7 @@ document.querySelector('button.sort-dep').onclick = function () {
         return new Date(a.departure) - new Date(b.departure);
     });
     outputTable.innerHTML = '';
-    renderTable(flightsData, outputTable);
+    renderTable(flightsData);
 };
 
 document.querySelector('button.sort-ar').onclick = function () {
@@ -30,11 +39,11 @@ document.querySelector('button.sort-ar').onclick = function () {
         return new Date(a.arrival) - new Date(b.arrival);
     });
     outputTable.innerHTML = '';
-    renderTable(flightsData, outputTable);
+    renderTable(flightsData);
 };
 
 
-function renderTable(data, target) {
+function renderTable(data) {
     data.forEach(entry => {
         const tr = document.createElement('tr');
         tr.innerHTML = `
@@ -45,6 +54,6 @@ function renderTable(data, target) {
                     <td>${entry.arrival}</td>
                     <td>${entry.by}</td>
                 `;
-        target.appendChild(tr)
+        outputTable.appendChild(tr)
     });
 }

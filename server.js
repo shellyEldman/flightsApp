@@ -11,17 +11,12 @@ contentTypes.set('json', 'application/json');
 http.createServer(function (req, res) {
     const reqUrl = url.parse(req.url);
     let ext = reqUrl.pathname.split('.')[1];
-    console.log('path', reqUrl.pathname);
-    console.log('ext', ext);
     let fileName = reqUrl.pathname.substr(1);
     if(!fileName) {
         fileName = 'file.html';
         ext = 'html';
     }
-    console.log('fileName', fileName);
     const cType = contentTypes.get(ext);
-    console.log('type', cType);
-
 
     fs.readFile('public/' + fileName, function(err, data) {
         if(err) {

@@ -24,8 +24,12 @@ h1 {
 label {
     color: white;
     letter-spacing: 2px;
-    font-size: 17px;
+    font-size: 18px;
     font-weight: 600;
+}
+
+.search {
+    margin-bottom: 17px;
 }
 
 input {
@@ -33,11 +37,11 @@ input {
     border-bottom: 1px solid white;
     outline: none;
     background: none;
-    padding: 7px;
-    margin-right: 10px;
     color: #282828;
     font-size: 17px;
     font-weight: 600;
+    width: 130px;
+    padding: 3px;
 }
 
 #sortSpan {
@@ -81,6 +85,7 @@ table {
     margin: 20px;
     padding: 5px;
     color: #282828;
+    width: 800px;
 }
 
 th {
