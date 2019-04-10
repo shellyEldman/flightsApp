@@ -9,7 +9,7 @@ contentTypes.set('css', 'text/css');
 contentTypes.set('json', 'application/json');
 
 http.createServer(function (req, res) {
-    const reqUrl = url.parse(req.url);
+    const reqUrl = url.parse(req.url, true);
     let ext = reqUrl.pathname.split('.')[1];
     let fileName = reqUrl.pathname.substr(1);
     if(!fileName) {
@@ -29,6 +29,10 @@ http.createServer(function (req, res) {
                 res.write('Server Error');
             }
         } else {
+            if((cType === 'application/json') && reqUrl.query.q) {
+                data = filterItems(JSON.parse(data), reqUrl.query.q);
+            }
+           
             res.writeHead(200, {'Content-Type': cType});
             res.write(data);
         }
@@ -37,3 +41,12 @@ http.createServer(function (req, res) {
 }).listen(8080, function () {
     console.log('Client is available at http://localhost:8080');
 });
+
+
+function filterItems(data, query) {
+    const regex = new RegExp("^" + query, 'i');
+    const filteredData = data.filter((item) => {
+        return item.to.match(regex);
+    });
+    return JSON.stringify(filteredData);
+};
